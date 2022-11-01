@@ -1,11 +1,26 @@
 @page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["title"] = "home page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    Color: @Model.Color
+    <div>Color: @Model.Color</div>
+    <my-counter color="@Model.Color" id="counter"></my-counter>
+    <button id="test">Click</button>
 </div>
+
+<script>
+    console.debug("test")
+
+    window.onload = function() {
+        const counterElement = document.getElementById("counter");
+        counterElement.addEventListener("increment", handleIncrement);
+    };    
+    
+    function handleIncrement() {
+        console.debug('handle increment in cshtml')
+    }
+</script>

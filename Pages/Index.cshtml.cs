@@ -11,7 +11,7 @@ public class IndexModel : PageModel
     public IndexModel(ILogger<IndexModel> logger)
     {
         _logger = logger;
-        Color = "red";
+        Color = "light red";
     }
 
     public void OnGet()
